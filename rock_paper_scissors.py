@@ -35,61 +35,38 @@ choice = 'yes'
 while True:
     player_input = int(input('Choose 0 for paper, 1 for rock, 2 for scissors:'))
     enemy_choice = random.randint(0, 2)
-
+    game_result = ''
 
     if player_input == enemy_choice:
-        print('Player input:\n'
-              f'{images[player_input]}')
-
-        print('Enemy input:\n'
-            f'{images[enemy_choice]}')
-
-        print('Draw')
-        choice = input("Would you like to play again?").lower()
+        game_result = 'Draw'
 
 
     elif images[player_input - 1] == images[enemy_choice]:
-        print('Player input:\n'
-            f'{images[player_input]}')
+        game_result = 'You lost'
 
-        print('Enemy input:\n'
-            f'{images[enemy_choice]}')
-
-        print('You lost!')
-        choice = input("Would you like to play again?").lower()
 
     else:
         try:
             if images[player_input + 1] == images[enemy_choice]:
-                print('Player input:\n'
-                    f'{images[player_input]}')
+                game_result = 'You won'
 
-                print('Enemy input:\n'
-                    f'{images[enemy_choice]}')
-
-                print('You won!')
-                choice = input("Would you like to play again?").lower()
 
         except IndexError:
             if images[enemy_choice] == paper:
-                print('Player input:\n'
-                    f'{images[player_input]}')
+                game_result = 'You won'
 
-                print('Enemy input:\n'
-                    f'{images[enemy_choice]}')
-
-                print('You won!')
-                choice = input("Would you like to play again?").lower()
 
             elif images[enemy_choice] == rock:
-                print('Player input:\n'
-                    f'{images[player_input]}')
+                game_result = 'You lost'
 
-                print('Enemy input:\n'
-                    f'{images[enemy_choice]}')
+    print('Player input:\n'
+          f'{images[player_input]}')
 
-                print('You lost!')
-                choice = input("Would you like to play again?").lower()
+    print('Enemy input:\n'
+          f'{images[enemy_choice]}')
+
+    print(f'{game_result}')
+    choice = input("Would you like to play again?").lower()
 
     if choice == 'no':
         print('Game Finished')
