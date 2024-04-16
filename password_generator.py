@@ -22,4 +22,5 @@ for _ in range(nr_numbers):
 
 shuffled_password = list(generated_password)
 random.shuffle(shuffled_password)
-print(''.join(shuffled_password))
+
+print(f"Your password is: {''.join(shuffled_password)}")
