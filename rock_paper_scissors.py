@@ -40,21 +40,17 @@ while True:
     if player_input == enemy_choice:
         game_result = 'Draw'
 
-
     elif images[player_input - 1] == images[enemy_choice]:
         game_result = 'You lost'
-
 
     else:
         try:
             if images[player_input + 1] == images[enemy_choice]:
                 game_result = 'You won'
 
-
         except IndexError:
             if images[enemy_choice] == paper:
                 game_result = 'You won'
-
 
             elif images[enemy_choice] == rock:
                 game_result = 'You lost'
@@ -71,5 +67,3 @@ while True:
     if choice == 'no':
         print('Game Finished')
         break
-
-
