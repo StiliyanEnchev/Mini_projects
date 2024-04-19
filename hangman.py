@@ -97,10 +97,6 @@ while '_' in guessed_word and turns < 6:
         won = True
         break
 
-
-
-
-
 if not won:
     print('Game Over')
 
