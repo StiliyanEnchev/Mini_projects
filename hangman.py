@@ -70,7 +70,7 @@ HANGMAN = (
 word_list = ["aardvark", "baboon", "camel"]
 
 chosen_word = random.choice(word_list)
-guessed_word = '_' * len(chosen_word)
+guessed_word = list('_' * len(chosen_word))
 turns = 0
 won = False
 
@@ -85,7 +85,6 @@ while '_' in guessed_word and turns < 6:
         continue
 
     match = [char if char == guess else '_' for char in chosen_word]
-    guessed_word = list(guessed_word)
 
     for indx in range(len(match)):
         if match[indx] != "_":
