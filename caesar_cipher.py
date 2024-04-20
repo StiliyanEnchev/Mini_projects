@@ -8,11 +8,13 @@ def caesar_cipher(direction, received_text, shift_num):
     encrypted_text = ''
 
     if direction == 'encode':
+
         for char in received_text:
             try:
                 encrypted_text += alphabet[alphabet.index(char) + shift_num]
             except IndexError:
                 encrypted_text += alphabet[(alphabet.index(char) + shift_num) - len(alphabet)]
+
     elif direction == 'decode':
 
         for char in received_text:
@@ -21,6 +23,6 @@ def caesar_cipher(direction, received_text, shift_num):
             except IndexError:
                 encrypted_text += alphabet[(alphabet.index(char) - shift_num) + len(alphabet)]
 
-    return print(encrypted_text)
+    print(encrypted_text)
 
 caesar_cipher(direction, text, shift)
