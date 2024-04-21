@@ -15,6 +15,8 @@ logo = r'''
 print(logo)
 bids = {}
 def highers_bid(bids_dictionary):
+    """Finds the higher bidder"""
+
     highers_bid = ['John', 0]
     for key, value in bids_dictionary.items():
         if int(value) > highers_bid[1]:
