@@ -1,1 +1,1 @@
-# Udemy-100-days-of-code-challenge
+Other mini projects
